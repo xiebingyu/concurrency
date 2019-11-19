@@ -13,6 +13,7 @@ public class SingletonExample6 {
     public static SingletonExample6 getInstance(){
         return Single.INSTANCE.getInstance();
     }
+
     private  enum Single{
         INSTANCE;
         private SingletonExample6 singleton;
