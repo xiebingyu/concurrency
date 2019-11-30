@@ -7,11 +7,15 @@ import com.ma.concurrency.annoations.ThreadSafe;
  */
 @ThreadSafe
 public class SingletonExample4 {
+
     //单例对象
     private volatile static SingletonExample4 instance = null;
+
     //私有的构造函数
     private SingletonExample4(){
+
     }
+
     //1、memory = allocate() 分配对象内存空间
     //2、ctoInstance() 初始化对象
     //3、instance = memory 设置instance指向刚分配的内存

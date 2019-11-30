@@ -30,6 +30,7 @@ public class HashSetExample {
                 try {
                     semaphore.acquire();
                     add(count);
+                    log.info("Size:{}",count);
                     semaphore.release();
                 } catch (Exception e) {
                     log.error("exception",e);

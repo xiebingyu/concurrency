@@ -13,9 +13,13 @@ import java.util.concurrent.Semaphore;
 @NotThreadSafe
 public class ArrayListExample {
 
-    //请求总数
+    /**
+     * 请求总数
+     */
     public static int clientTotal = 5000;
-    //同时并发执行的线程数
+    /***
+     * 同时并发执行的线程数
+     */
     public static int threadTotal = 200;
 
     public static List<Integer> list = new ArrayList<Integer>();
@@ -30,6 +34,7 @@ public class ArrayListExample {
                 try {
                     semaphore.acquire();
                     add(count);
+                    log.info("Count:{}",count);
                     semaphore.release();
                 } catch (Exception e) {
                     log.error("exception",e);

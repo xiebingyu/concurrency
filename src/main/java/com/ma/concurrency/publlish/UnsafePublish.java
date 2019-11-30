@@ -6,7 +6,9 @@ import java.util.Arrays;
 
 @Slf4j
 public class UnsafePublish {
+
     private String[] states = {"a","b","c"};
+
     public String[] getStates(){
         return states;
     }

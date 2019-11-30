@@ -23,7 +23,7 @@ public class AtomicExample3 {
         ExecutorService executorService = Executors.newCachedThreadPool();
         final Semaphore semaphore = new Semaphore(threadTotal);
         final CountDownLatch countDownLatch = new CountDownLatch(clientTotal);
-        for(int i = 0;i < clientTotal ; i++)
+        for(int i = 0;i < clientTotal ; i++) {
             executorService.execute(() -> {
                 try {
                     semaphore.acquire();
@@ -34,6 +34,7 @@ public class AtomicExample3 {
                 }
                 countDownLatch.countDown();
             });
+        }
         countDownLatch.await();
         executorService.shutdown();
         log.info("count:{}",count);
